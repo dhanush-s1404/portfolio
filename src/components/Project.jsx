@@ -65,7 +65,7 @@ export default function Project() {
             id="project-heading"
             className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold tracking-wide"
           >
-            featured_project
+            projects
           </h2>
           <div className="flex-1 h-px bg-gradient-to-r from-neon/30 to-transparent" />
         </div>
@@ -187,6 +187,8 @@ export default function Project() {
             </div>
           </div>
         </div>
+
+        {/* Portfolio Project Card */}
       </div>
     </section>
   )
