@@ -71,7 +71,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-in-up opacity-0 animation-delay-600">
           <a
-            href="Dhanush_S_Resume.pdf"
+            href="/Dhanush_S_Resume.pdf"
             download
             className="inline-flex items-center gap-2 px-6 py-3 bg-neon/10 border border-neon text-neon font-[family-name:var(--font-heading)] text-sm font-medium rounded-lg transition-all hover:bg-neon hover:text-dark-bg hover:shadow-lg hover:shadow-neon/25 pulse-glow"
           >
