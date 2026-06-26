@@ -76,7 +76,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-6 py-3 bg-neon/10 border border-neon text-neon font-[family-name:var(--font-heading)] text-sm font-medium rounded-lg transition-all hover:bg-neon hover:text-dark-bg hover:shadow-lg hover:shadow-neon/25 pulse-glow"
           >
             <Download size={16} />
-            Dhanush_S_Resume.pdf
+            Download Resume
           </a>
           <a
             href="#contact"
