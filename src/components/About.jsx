@@ -22,12 +22,11 @@ export default function About() {
             <div className="font-[family-name:var(--font-code)] text-xs sm:text-sm space-y-2 text-dark-muted">
               <p><span className="text-cyber-purple">const</span> <span className="text-cyber-blue">dhanush</span> <span className="text-dark-muted">=</span> {'{'}</p>
               <p className="pl-4"><span className="text-neon">name</span>: <span className="text-amber-400">"Dhanush S"</span>,</p>
-              <p className="pl-4"><span className="text-neon">role</span>: <span className="text-amber-400">"Full-Stack Developer"</span>,</p>
+              <p className="pl-4"><span className="text-neon">role</span>: <span className="text-amber-400">"Back-end Developer"</span></p>
               <p className="pl-4"><span className="text-neon">education</span>: <span className="text-amber-400">"BCA @ Hindusthan College of Arts & Science"</span>,</p>
               <p className="pl-4"><span className="text-neon">graduation</span>: <span className="text-amber-400">"2026"</span>,</p>
               <p className="pl-4"><span className="text-neon">location</span>: <span className="text-amber-400">"Tamil Nadu, India"</span>,</p>
-              <p className="pl-4"><span className="text-neon">seeking</span>: <span className="text-amber-400">"Back-end"</span>,Python Developer</p>
-              <p className="pl-4"><span className="text-neon">passions</span>: [<span className="text-amber-400">"MERN"</span>, <span className="text-amber-400">"AI Integration"</span>, <span className="text-amber-400">"Clean Code"</span>]</p>
+              <p className="pl-4"><span className="text-neon">seeking</span>: <span className="text-amber-400">"Back-end Developer, Python Developer"</span></p>
               <p>{'}'}</p>
             </div>
           </div>
