@@ -26,7 +26,7 @@ export default function About() {
               <p className="pl-4"><span className="text-neon">education</span>: <span className="text-amber-400">"BCA @ Hindusthan College of Arts & Science"</span>,</p>
               <p className="pl-4"><span className="text-neon">graduation</span>: <span className="text-amber-400">"2026"</span>,</p>
               <p className="pl-4"><span className="text-neon">location</span>: <span className="text-amber-400">"Tamil Nadu, India"</span>,</p>
-              <p className="pl-4"><span className="text-neon">seeking</span>: <span className="text-amber-400">"Full-Stack / SWE Internship"</span>,</p>
+              <p className="pl-4"><span className="text-neon">seeking</span>: <span className="text-amber-400">"Back-end"</span>,Python Developer</p>
               <p className="pl-4"><span className="text-neon">passions</span>: [<span className="text-amber-400">"MERN"</span>, <span className="text-amber-400">"AI Integration"</span>, <span className="text-amber-400">"Clean Code"</span>]</p>
               <p>{'}'}</p>
             </div>
@@ -36,10 +36,10 @@ export default function About() {
         {/* Info cards grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {[
-            { icon: <GraduationCap size={18} />, label: 'Education', value: 'BCA — Hindusthan College' },
+            { icon: <GraduationCap size={18} />, label: 'Education', value: 'BCA — Hindusthan College of Science and Commerce' },
             { icon: <MapPin size={18} />, label: 'Location', value: 'Tamil Nadu, India' },
-            { icon: <Briefcase size={18} />, label: 'Status', value: 'Open to Internships' },
-            { icon: <Calendar size={18} />, label: 'Graduating', value: 'May 2026' },
+            { icon: <Briefcase size={18} />, label: 'Status', value: 'Open to Internships and jobs' },
+            { icon: <Calendar size={18} />, label: 'Graduated', value: 'May 2026' },
           ].map(item => (
             <div
               key={item.label}
@@ -57,9 +57,8 @@ export default function About() {
           <p className="flex items-start gap-3">
             <Code2 size={16} className="text-neon shrink-0 mt-1" />
             <span>
-              I'm passionate about building full-stack web applications that solve real-world problems
+              I'm passionate about building back-end web applications that solve real-world problems
               — especially at the intersection of <span className="text-neon font-medium">AI and software engineering</span>.
-              The MERN stack is my weapon of choice.
             </span>
           </p>
           <p className="flex items-start gap-3">

@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, Download, ChevronDown } from 'lucide-react'
 export default function Hero() {
   const [displayText, setDisplayText] = useState('')
   const [showCursor, setShowCursor] = useState(true)
-  const fullText = 'Full-Stack Developer (MERN) | AI-Integrated Web Apps'
+  const fullText = 'Back-End Developer | Python Developer | AI-Integrated Web Apps'
 
   useEffect(() => {
     let index = 0
@@ -63,15 +63,15 @@ export default function Hero() {
 
         {/* Status line */}
         <p className="text-xs font-[family-name:var(--font-label)] text-dark-muted mb-8 animate-fade-in-up opacity-0 animation-delay-400">
-          <span className="text-neon">●</span> Available for internships &nbsp;|&nbsp; 
-          <span className="text-cyber-blue">◆</span> BCA @ Hindusthan College &nbsp;|&nbsp;
+          <span className="text-neon">●</span> Available for internships and jobs &nbsp;|&nbsp; 
+          <span className="text-cyber-blue">◆</span> BCA @ Hindusthan College of Science and Commerce &nbsp;|&nbsp;
           <span className="text-cyber-purple">▲</span> Tamil Nadu, India
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-in-up opacity-0 animation-delay-600">
           <a
-            href="/resume.pdf"
+            href="/Dhanush-S-Resume.pdf"
             download
             className="inline-flex items-center gap-2 px-6 py-3 bg-neon/10 border border-neon text-neon font-[family-name:var(--font-heading)] text-sm font-medium rounded-lg transition-all hover:bg-neon hover:text-dark-bg hover:shadow-lg hover:shadow-neon/25 pulse-glow"
           >
