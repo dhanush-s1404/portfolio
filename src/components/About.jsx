@@ -1,79 +1,97 @@
-import { GraduationCap, MapPin, Briefcase, Calendar, Code2 } from 'lucide-react'
+import { GraduationCap, MapPin, Calendar, Award, Code2, Brain, Rocket } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 export default function About() {
+  const sectionRef = useScrollReveal()
+
   return (
-    <section id="about" className="py-24 px-4" aria-labelledby="about-heading">
-      <div className="max-w-5xl mx-auto">
+    <section id="about" className="py-20 px-4" aria-labelledby="about-heading">
+      <div className="max-w-4xl mx-auto reveal" ref={sectionRef}>
         {/* Section header */}
-        <div className="flex items-center gap-3 mb-12">
-          <span className="font-[family-name:var(--font-accent)] text-neon text-sm">01.</span>
+        <div className="text-center mb-14">
+          <span className="text-sm font-mono text-primary font-medium">01. About</span>
           <h2
             id="about-heading"
-            className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold tracking-wide"
+            className="text-3xl sm:text-4xl font-bold mt-2 mb-3"
           >
-            about_me
+            About Me
           </h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-neon/30 to-transparent" />
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </div>
 
-        {/* Terminal-style about card */}
-        <div className="terminal-card rounded-xl p-6 sm:p-8 bg-dark-card/80 dark:bg-dark-card/80 mb-8">
-          <div className="pt-6">
-            <div className="font-[family-name:var(--font-code)] text-xs sm:text-sm space-y-2 text-dark-muted">
-              <p><span className="text-cyber-purple">const</span> <span className="text-cyber-blue">dhanush</span> <span className="text-dark-muted">=</span> {'{'}</p>
-              <p className="pl-4"><span className="text-neon">name</span>: <span className="text-amber-400">"Dhanush S"</span>,</p>
-              <p className="pl-4"><span className="text-neon">role</span>: <span className="text-amber-400">"Back-end Developer"</span></p>
-              <p className="pl-4"><span className="text-neon">education</span>: <span className="text-amber-400">"BCA @ Hindusthan College of Arts & Science"</span>,</p>
-              <p className="pl-4"><span className="text-neon">graduation</span>: <span className="text-amber-400">"2026"</span>,</p>
-              <p className="pl-4"><span className="text-neon">location</span>: <span className="text-amber-400">"Tamil Nadu, India"</span>,</p>
-              <p className="pl-4"><span className="text-neon">seeking</span>: <span className="text-amber-400">"Back-end Developer, Python Developer"</span></p>
-              <p>{'}'}</p>
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          {/* Info cards */}
+          <div className="space-y-4">
+            <div className="card-hover p-5 rounded-xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <GraduationCap size={20} className="text-primary" />
+                </div>
+                <h3 className="font-semibold">Education</h3>
+              </div>
+              <p className="text-sm text-light-muted dark:text-dark-muted">
+                Bachelor of Computer Applications (BCA)
+              </p>
+              <p className="text-sm text-light-muted dark:text-dark-muted mt-1">
+                Hindusthan College of Science and Commerce
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="card-hover p-4 rounded-xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-center">
+                <Calendar size={18} className="text-primary mx-auto mb-2" />
+                <span className="text-xs font-medium text-light-muted dark:text-dark-muted block">Graduation</span>
+                <p className="font-bold text-lg mt-1">2026</p>
+              </div>
+              <div className="card-hover p-4 rounded-xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-center">
+                <Award size={18} className="text-primary mx-auto mb-2" />
+                <span className="text-xs font-medium text-light-muted dark:text-dark-muted block">CGPA</span>
+                <p className="font-bold text-lg mt-1">7.34</p>
+              </div>
+            </div>
+
+            <div className="card-hover p-4 rounded-xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <MapPin size={18} className="text-primary" />
+                </div>
+                <div>
+                  <span className="text-xs font-medium text-light-muted dark:text-dark-muted">Location</span>
+                  <p className="font-semibold">Erode, Tamil Nadu, India</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Info cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-          {[
-            { icon: <GraduationCap size={18} />, label: 'Education', value: 'BCA — Hindusthan College of Science and Commerce' },
-            { icon: <MapPin size={18} />, label: 'Location', value: 'Tamil Nadu, India' },
-            { icon: <Briefcase size={18} />, label: 'Status', value: 'Open to Internships and jobs' },
-            { icon: <Calendar size={18} />, label: 'Graduated', value: 'May 2026' },
-          ].map(item => (
-            <div
-              key={item.label}
-              className="group p-4 rounded-xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border hover:border-neon/50 transition-all duration-300"
-            >
-              <div className="text-neon mb-2 group-hover:scale-110 transition-transform">{item.icon}</div>
-              <p className="text-[10px] uppercase tracking-widest text-light-muted dark:text-dark-muted font-[family-name:var(--font-label)]">{item.label}</p>
-              <p className="text-sm font-medium mt-1 font-[family-name:var(--font-heading)]">{item.value}</p>
+          {/* About text with icons */}
+          <div className="space-y-5">
+            <div className="flex gap-4 items-start group">
+              <div className="p-2 rounded-lg bg-primary/10 shrink-0 group-hover:bg-primary/20 transition-colors">
+                <Code2 size={18} className="text-primary" />
+              </div>
+              <p className="text-light-muted dark:text-dark-muted leading-relaxed">
+                Dedicated BCA student with a strong passion for <strong className="text-light-text dark:text-dark-text">backend development</strong>. I enjoy working with Python, REST APIs, and databases to build robust and scalable applications.
+              </p>
             </div>
-          ))}
-        </div>
 
-        {/* Story paragraphs */}
-        <div className="space-y-4 text-light-muted dark:text-dark-muted leading-relaxed max-w-3xl font-[family-name:var(--font-body)]">
-          <p className="flex items-start gap-3">
-            <Code2 size={16} className="text-neon shrink-0 mt-1" />
-            <span>
-              I'm passionate about building back-end web applications that solve real-world problems
-              — especially at the intersection of <span className="text-neon font-medium">AI and software engineering</span>.
-            </span>
-          </p>
-          <p className="flex items-start gap-3">
-            <Code2 size={16} className="text-cyber-blue shrink-0 mt-1" />
-            <span>
-              I believe in writing <span className="text-cyber-blue font-medium">clean, secure, and scalable code</span>.
-              From JWT authentication to rate limiting, I don't just build features — I build them right.
-            </span>
-          </p>
-          <p className="flex items-start gap-3">
-            <Code2 size={16} className="text-cyber-purple shrink-0 mt-1" />
-            <span>
-              Currently exploring how <span className="text-cyber-purple font-medium">Generative AI</span> can 
-              supercharge developer tools, while stacking certifications in data analytics and Python.
-            </span>
-          </p>
+            <div className="flex gap-4 items-start group">
+              <div className="p-2 rounded-lg bg-accent/10 shrink-0 group-hover:bg-accent/20 transition-colors">
+                <Brain size={18} className="text-accent" />
+              </div>
+              <p className="text-light-muted dark:text-dark-muted leading-relaxed">
+                Fascinated by <strong className="text-light-text dark:text-dark-text">AI-integrated applications</strong> and how artificial intelligence can enhance software products and developer workflows.
+              </p>
+            </div>
+
+            <div className="flex gap-4 items-start group">
+              <div className="p-2 rounded-lg bg-purple-500/10 shrink-0 group-hover:bg-purple-500/20 transition-colors">
+                <Rocket size={18} className="text-purple-500" />
+              </div>
+              <p className="text-light-muted dark:text-dark-muted leading-relaxed">
+                A firm believer in <strong className="text-light-text dark:text-dark-text">continuous learning</strong> and problem-solving. Whether it's DSA challenges or exploring new frameworks, I approach every challenge with curiosity.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,15 +1,16 @@
-import { Award } from 'lucide-react'
+import { Award, ExternalLink } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const certifications = [
   {
     title: 'GenAI Powered Data Analytics Job Simulation',
-    issuer: 'Tata, via Forage',
+    issuer: 'Tata via Forage',
     year: '2026',
     icon: '🤖',
   },
   {
     title: 'Data Analytics Job Simulation',
-    issuer: 'Deloitte Australia, via Forage',
+    issuer: 'Deloitte Australia via Forage',
     year: '2026',
     icon: '📊',
   },
@@ -28,62 +29,59 @@ const certifications = [
 ]
 
 export default function Certifications() {
+  const sectionRef = useScrollReveal()
+
   return (
     <section
       id="certifications"
-      className="py-24 px-4"
+      className="py-20 px-4 relative overflow-hidden"
       aria-labelledby="certifications-heading"
     >
-      <div className="max-w-4xl mx-auto">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-light-card/50 to-transparent dark:from-dark-card/30 dark:to-transparent" />
+
+      <div className="max-w-4xl mx-auto relative z-10 reveal" ref={sectionRef}>
         {/* Section header */}
-        <div className="flex items-center gap-3 mb-12">
-          <span className="font-[family-name:var(--font-accent)] text-neon text-sm">04.</span>
+        <div className="text-center mb-14">
+          <span className="text-sm font-mono text-primary font-medium">04. Certifications</span>
           <h2
             id="certifications-heading"
-            className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold tracking-wide"
+            className="text-3xl sm:text-4xl font-bold mt-2 mb-3"
           >
-            certifications
+            Certifications
           </h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-neon/30 to-transparent" />
+          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </div>
 
-        {/* Terminal-style list */}
-        <div className="space-y-3">
+        <div className="grid sm:grid-cols-2 gap-5">
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="group flex items-start gap-4 p-4 sm:p-5 rounded-xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border hover:border-neon/50 transition-all duration-300 hover:shadow-lg hover:shadow-neon/5"
+              className="card-hover group p-5 rounded-2xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border"
             >
-              {/* Index number */}
-              <div className="hidden sm:flex items-center justify-center w-8 h-8 rounded-lg bg-neon/10 text-neon font-[family-name:var(--font-heading)] text-xs font-bold shrink-0">
-                {String(index).padStart(2, '0')}
+              <div className="flex items-start gap-4">
+                {/* Icon */}
+                <div className="text-2xl shrink-0 p-2 rounded-xl bg-primary/5 dark:bg-primary/10 group-hover:scale-110 transition-transform">
+                  {cert.icon}
+                </div>
+
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-semibold text-sm leading-tight mb-1.5 group-hover:text-primary transition-colors">
+                    {cert.title}
+                  </h3>
+                  <p className="text-sm text-light-muted dark:text-dark-muted">
+                    {cert.issuer}
+                  </p>
+                  <div className="flex items-center gap-2 mt-3">
+                    <span className="inline-block px-2.5 py-0.5 text-xs font-medium rounded-full bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/10">
+                      {cert.year}
+                    </span>
+                  </div>
+                </div>
               </div>
-
-              {/* Emoji icon */}
-              <span className="text-xl sm:hidden shrink-0">{cert.icon}</span>
-
-              {/* Content */}
-              <div className="flex-1 min-w-0">
-                <h3 className="font-medium text-sm sm:text-base group-hover:text-neon transition-colors font-[family-name:var(--font-heading)]">
-                  {cert.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-light-muted dark:text-dark-muted mt-1 font-[family-name:var(--font-label)]">
-                  <span className="text-cyber-blue">{cert.issuer}</span>
-                </p>
-              </div>
-
-              {/* Year badge */}
-              <span className="px-2.5 py-1 text-[10px] font-[family-name:var(--font-accent)] text-neon bg-neon/10 border border-neon/20 rounded-md shrink-0">
-                {cert.year}
-              </span>
             </div>
           ))}
         </div>
-
-        {/* Bottom note */}
-        <p className="text-center text-xs font-[family-name:var(--font-code)] text-dark-muted mt-8">
-          <span className="text-neon">$</span> echo "Always learning, always growing." <span className="text-neon animate-pulse">▊</span>
-        </p>
       </div>
     </section>
   )
