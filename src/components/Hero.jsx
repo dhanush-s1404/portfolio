@@ -79,8 +79,8 @@ export default function Hero() {
         {/* Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12 animate-fade-in-up opacity-0 animation-delay-400">
           <a
-            href="/Dhanush_S_Resume.pdf"
-            download=""
+            href="portfolio/Dhanush_Resume_al.pdf"
+            download="Dhanush_Resume_al.pdf"
             className="btn-shimmer inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white font-medium rounded-xl hover:bg-primary-dark transition-all hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
           >
             <Download size={18} />
