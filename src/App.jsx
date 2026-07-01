@@ -1,4 +1,5 @@
 import { ThemeProvider } from './context/ThemeContext'
+import AnimatedBackground from './components/AnimatedBackground'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -11,17 +12,20 @@ import Footer from './components/Footer'
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text transition-colors duration-300">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Certifications />
-          <Contact />
-        </main>
-        <Footer />
+      <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text transition-colors duration-300 relative">
+        <AnimatedBackground />
+        <div className="relative z-10">
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <Certifications />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
       </div>
     </ThemeProvider>
   )
